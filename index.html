@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block heading %}
+FIRST PAGE
+{% endblock %}
+{% block body %}
+<p>
+	HOW great is our god	
+</p>
+<a href="{{ url_for('more') }}">see more...</a>
+<ul>
+	{% for name in names %}
+	<li> {{ name }}</li>
+	{% endfor %}
+</ul>
+  <h1>{{ username }}</h1>
+  <form action="{{ url_for('hello') }}" method="Post">
+  	<input type="text" name="name" placeholder="Enter your full name">
+  	<button>Submit</button>
+  </form>
+  <ul>
+  	{% for note in notes %}
+  	<li>{{ note }}</li>
+  	{% endfor %}
+  </ul>
+  <form action="{{ url_for('index') }}" method="Post">
+  	<input type="text" name="note" placeholder="Enter your note">
+  	<button>Add Note</button>
+  </form>
+  {% endblock %}
